@@ -22,6 +22,6 @@ $this->group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
 $this->post('atualizar-perfil', 'Admin\UserController@profileUpdate')->name('profile.update')->middleware('auth');
 $this->get('meu-perfil', 'Admin\UserController@profile')->name('profile')->middleware('auth');
 
-$this->get('/', 'Auth\LoginController@login')->name('home');
+$this->get('/', 'Auth\LoginController@showLoginForm')->name('home');
 
 Auth::routes();
