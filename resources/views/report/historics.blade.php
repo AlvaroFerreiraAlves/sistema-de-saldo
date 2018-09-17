@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Título Opcional</title>
+    <title>Relatório</title>
 
     <!--Custon CSS (está em /public/assets/site/css/certificate.css)-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<table class="table">
+<table class="table tab-content">
     <thead>
     <tr>
         <th>#</th>
@@ -41,11 +41,6 @@
     </tbody>
 </table>
 
-@if (isset($dataForm))
-    {!! $historics->appends($dataForm)->links() !!}
-@else
-    {!! $historics->links() !!}
-@endif
 
 
 </body>

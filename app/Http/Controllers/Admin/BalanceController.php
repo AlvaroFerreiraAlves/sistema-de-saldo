@@ -146,7 +146,7 @@ class BalanceController extends Controller
         $historics = auth()->user()
             ->historics()
             ->with(['userSender'])
-            ->paginate($this->totalPage);
+            ->paginate(100);
 
         $types = $historic->type();
 
