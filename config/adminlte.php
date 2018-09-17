@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Curso</b> L5.5',
+    'logo' => '<b>Saldo</b> L5.5',
 
     'logo_mini' => '<b>L</b>5.5',
 
