@@ -17,6 +17,7 @@ $this->group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
     $this->get('balance', 'BalanceController@index')->name('admin.balance');
 
     $this->get('/', 'AdminController@index')->name('admin.home');
+    $this->get('report', 'BalanceController@report')->name('report');
 });
 
 $this->post('atualizar-perfil', 'Admin\UserController@profileUpdate')->name('profile.update')->middleware('auth');

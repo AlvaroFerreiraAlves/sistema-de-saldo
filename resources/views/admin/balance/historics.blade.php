@@ -23,7 +23,7 @@
                     @foreach ($types as $key => $type)
                         <option value="{{ $key }}">{{ $type }}</option>
                     @endforeach
-                </select>                
+                </select>
 
                 <button type="submit" class="btn btn-primary">Pesquisar</button>
             </form>
@@ -36,7 +36,7 @@
                         <th>Valor</th>
                         <th>Tipo</th>
                         <th>Data</th>
-                        <th>?Sender?</th>
+                        <th>Sender</th>
                     <tr>
                 </thead>
                 <tbody>
@@ -64,6 +64,10 @@
             @else
                 {!! $historics->links() !!}
             @endif
+
+            <div class="box-footer"><a href="{{route('report')}}" class="btn btn-primary">Imprimir</a></div>
         </div>
+
+
     </div>
 @stop

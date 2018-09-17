@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Balance;
 use App\Http\Requests\MoneyValidationFormRequest;
 use App\User;
 use App\Models\Historic;
+use Illuminate\Support\Facades\Auth;
 
 class BalanceController extends Controller
 {
@@ -137,5 +139,18 @@ class BalanceController extends Controller
         $types = $historic->type();
 
         return view('admin.balance.historics', compact('historics', 'types', 'dataForm'));
+    }
+
+    public function report(Historic $historic)
+    {
+        $historics = auth()->user()
+            ->historics()
+            ->with(['userSender'])
+            ->paginate($this->totalPage);
+
+        $types = $historic->type();
+
+       return \PDF::loadView('report.historics', compact('historics', 'types'))->stream('historic.pdf');
+
     }
 }
